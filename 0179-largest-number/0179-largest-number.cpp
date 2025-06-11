@@ -8,7 +8,6 @@ public:
         string res = "";
         for(int i : nums) res += to_string(i);
         
-        if(res[0] == '0') return "0";
-        return res;
+        return (res[0] == '0' ? "0" : res);
     }
 };
