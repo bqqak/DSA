@@ -5,8 +5,8 @@ class Solution:
         while True:
             if sum(nums) % k == 0:
                 return cnt
-            for i in range(1, n):
-                nums[i] = nums[i] - 1
+            for i in range(n):
+                nums[i] -= 1
                 cnt += 1
                 if sum(nums) % k == 0:
                     return cnt
