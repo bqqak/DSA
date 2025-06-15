@@ -3,11 +3,11 @@ class Solution:
         cnt = 0
         n = len(nums)
         while True:
-            if sum(nums) % k == 0:
-                return cnt
+            
             for i in range(n):
-                nums[i] -= 1
-                cnt += 1
                 if sum(nums) % k == 0:
                     return cnt
+                nums[i] -= 1
+                cnt += 1
+                
         return cnt
