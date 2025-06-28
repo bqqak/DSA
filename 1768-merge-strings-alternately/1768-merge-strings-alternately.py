@@ -3,6 +3,7 @@ class Solution:
         '''
             Using two-pointers. i = 0 -> for first string
                                 j = 0 -> for second string
+            
         '''
         ans = ""
         i = 0
