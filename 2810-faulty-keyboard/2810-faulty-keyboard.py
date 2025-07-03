@@ -12,5 +12,5 @@ class Solution:
             idx = s.find('i')
             f = s[:idx][::-1]
             s = s[idx + 1:]
-            s = f + s
+            s = "".join([f,s])
         return s
