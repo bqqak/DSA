@@ -11,7 +11,7 @@ class Solution:
                 break
             if words[i] == '':
                 ans = ans[::-1]
-            elif words[i] != '':
+            else:
                 ans += words[i]
                 ans = ans[::-1]
                 
