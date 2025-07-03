@@ -1,18 +1,16 @@
 class Solution:
     def finalString(self, s: str) -> str:
-        words = s.split('i')
-        ans = ''
-        n = len(words)
-        for i in range(n):
-            if i == n - 1 and words[i] == '':
-                ans = ans[::-1]
-            elif i == n - 1:
-                ans += words[i]
-                break
-            if words[i] == '':
-                ans = ans[::-1]
-            else:
-                ans += words[i]
-                ans = ans[::-1]
-                
-        return ans
+        '''
+        the main idea is to change s when i in s
+        find index of i then  s[:i][::-1] + s[i:]
+
+        s = "string" i = 3 
+        f = s[:3][::-1] = rts
+        s = [4:] = ng 
+        '''
+        while 'i' in s:
+            idx = s.find('i')
+            f = s[:idx][::-1]
+            s = s[idx + 1:]
+            s = f + s
+        return s
