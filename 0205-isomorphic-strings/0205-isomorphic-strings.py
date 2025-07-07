@@ -1,20 +1,14 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        '''
-        The main idea is to create map [element, arr[index]]
-        '''
-        char_indices = {}
-        for index, char in enumerate(s):
-            if char in char_indices:
-                char_indices[char].append(index)
+        mp = {}
+        n = len(s)
+        for i in range(n):
+            c1 = s[i]
+            c2 = t[i]
+            if c1 in mp:
+                if c2 != mp[c1]:
+                    return False
             else:
-                char_indices[char] = [index]
-        
-        char_indices_2 = {}
-        for index, char in enumerate(t):
-            if char in char_indices_2:
-                char_indices_2[char].append(index)
-            else:
-                char_indices_2[char] = [index]
-        
-        return list(char_indices.values()) == list(char_indices_2.values())
+                mp[c1] = c2
+                mp[c2] = c1
+        return True
